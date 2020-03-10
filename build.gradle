@@ -1,0 +1,28 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.70'
+    id 'war'
+}
+
+group 'com.nabinuri'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+    compile 'org.jetbrains.kotlin:kotlin-reflect:1.3.61'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.2.3.RELEASE'
+
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
